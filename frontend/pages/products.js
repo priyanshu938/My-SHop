@@ -59,7 +59,7 @@ const Products = (props) => {
 
 export async function getServerSideProps(context) {
   const API_KEY =
-    "d0a8c10d69ccd49bfdc3754c995d31226a4fd3920c674666f98127df092bffe65de2620a70a616fc16546e33d69ea72c64176897d43513e3855371ef53872b1bac1b2d0f596e0e4e04fe42028ddb68afede44ce4186c86f7cb5304905d3e488e129c1c8e8ccfa26c570a846e6683e310b5ca1b6f965b058c1a44f8f271cb899c";
+    "891b0d2876ca7a477f483b6507d83c92f8dda3e31765dae4f55b6e9b527aaf537250afdce3bcf0972b4824e9dc61d4d7663ba84fadc6e07130f9027d67bfea5d4d95f46f18c48e09dfb0810b3ca931be414b2f97f62421608cef1c12d3b1f4a258c5e1730f1f6e1b08d5b4fd08953bdb0ac202ae2528788f590e583d1ec490e8";
   const URL = "http://127.0.0.1:1337/api/products?populate=*";
 
   // fetch data from URL with correct scheme and headers
@@ -72,7 +72,6 @@ export async function getServerSideProps(context) {
   });
 
   const products = await res.json();
-  console.log(products.data[0].attributes);
 
   return { props: { products: products } };
 }
